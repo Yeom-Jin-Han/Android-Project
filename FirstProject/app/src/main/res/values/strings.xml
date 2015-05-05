@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="tab1">테스트1</string>
+    <string name="tab2">테스트2</string>
+    <string name="tab3">테스트3</string>
+    <string name="BackMonth"><![CDATA["<"]]>  </string>
+    <string name="FrontMonth"><![CDATA[">"]]>  </string>
+</resources>
