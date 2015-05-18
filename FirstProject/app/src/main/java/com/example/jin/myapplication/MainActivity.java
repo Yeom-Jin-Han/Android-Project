@@ -8,6 +8,10 @@ import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.ArrayAdapter;
+import android.view.LayoutInflater;
+import android.widget.LinearLayout;
+import android.content.Context;
+import android.view.Window;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -15,10 +19,25 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        LinearLayerSetting();
         TabHostSetup();
         ListViewSetup();
     }
 
+    protected void LinearLayerSetting()
+    {
+        Window win = getWindow();
+        win.setContentView(R.layout.activity_main);//첫번째에 메인을 깔고
+
+        LayoutInflater inflater = (LayoutInflater)getSystemService(
+                Context.LAYOUT_INFLATER_SERVICE);
+        LinearLayout linear = (LinearLayout)inflater.inflate(R.layout.date_layout, null);
+
+        LinearLayout.LayoutParams paramlinear = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT);
+        win.addContentView(linear, paramlinear);
+    }
     protected void TabHostSetup()
     {
         TabHost th = (TabHost)findViewById(R.id.tabHost);
